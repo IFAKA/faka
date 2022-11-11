@@ -1,18 +1,36 @@
-import { projects } from '@/models'
+import { useProject } from "@/hooks"
+import { motion } from "framer-motion"
+import { Spinner } from "../Spinner"
 
-const Body = () =>
-    <div className='lg:py-12 py-9 w-full h-full flex justify-center items-center px-4'>
-        <div className='md:py-0 py-4 grid grid-cols-1 sm:grid-cols-3 md:gap-8 gap-4'>
-            {projects.map(({ src, title, img, desc }) => (
-                <div className='md:w-64'>
-                    <a href={src} className='md:w-64' target="_blank">
-                        <img className='hidden sm:block sm:hover:scale-95 hover:cursor-pointer duration-150 ease-in-out' src={img} />
-                        <h2 className='sm:no-underline underline font-semibold md:pt-1.5 sm:text-center text-start'>{title}</h2>
-                    </a>
-                    <p className='whitespace-pre-wrap sm:text-center text-start'>{desc}</p>
-                </div>
-            ))}
+const Body = () => {
+    const projects = useProject()
+    return (
+        <div className="sm:pb-12 pb-9 flex justify-center">
+            <div>
+                {projects
+                    ? projects?.map(({ id, href, name, desc, tags }, i) =>
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.99 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.3, delay: i * 0.1 }}
+                            className="p-4" key={id}
+                        >
+                            <a href={href} className='hover:underline sm:no-underline underline font-semibold' target="_blank">
+                                {name}
+                            </a>
+                            <p>{desc}</p>
+                            <div className='flex flex-wrap text-sm'>
+                                {tags.map((tag, i) =>
+                                    <div className='px-1' key={i}>{tag}</div>
+                                )}
+                            </div>
+                        </motion.div>
+                    )
+                    : <Spinner />
+                }
+            </div>
         </div>
-    </div>
+    )
+}
 
 export default Body
