@@ -1,2 +1,3 @@
-const fetcher = async (url: string) => await fetch(url).then(r => r.json())
+import axios from "axios"
+const fetcher = async (url: string) => await axios.get(url).then(r => r.data)
 export default fetcher

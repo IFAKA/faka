@@ -2,12 +2,12 @@ import { contacts } from '@/models'
 import { motion } from "framer-motion"
 
 const Footer = () =>
-    <motion.div className='fixed bottom-0 py-1.5 w-full flex justify-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 border-t dark:border-t-slate-700'
-        initial={{ opacity: 0, scale: 0.99 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.9 }}
-    >
-        <div className='flex justify-around w-80 text-sm'>
+    <div className='fixed inset-x-0 bottom-0 py-1.5 w-full flex justify-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 border-t dark:border-t-slate-700'>
+        <motion.div className='flex justify-around w-80 text-sm'
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+        >
             {contacts.map(({ href, name }, i) => (
                 <a
                     key={i}
@@ -19,7 +19,7 @@ const Footer = () =>
                     {name}
                 </a>
             ))}
-        </div>
-    </motion.div>
+        </motion.div>
+    </div>
 
 export default Footer
