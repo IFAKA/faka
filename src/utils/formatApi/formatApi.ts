@@ -5,7 +5,7 @@ const formatApi = (apiRes: any): IProject[] =>
     apiRes?.map((repo: any) => ({
         id: repo.id,
         href: repo.homepage,
-        name: sentenceCase(repo.name),
+        name: sentenceCase(repo.name).replace(/-/g, ' '),
         desc: repo.description,
         tags: repo.topics.map((topic: string) => sentenceCase(topic))
     }))
