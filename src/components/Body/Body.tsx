@@ -6,7 +6,7 @@ const Body = () => {
   const projects = useProject()
   return (
     <div className="pb-12 p-4 grid place-items-center min-h-[calc(100%-74px)]">
-      <div className="grid gap-4 max-w-5xl">
+      <div className="grid gap-4 max-w-xs">
         {projects ? (
           projects?.map(({ id, href, name, desc, tags }, i) => (
             <motion.div
