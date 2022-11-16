@@ -1,5 +1,8 @@
 import axios from "axios"
 
-const fetcher = async (url: string) => await axios.get(url).then((r: any) => r.data)
+async function fetcher(url: string) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  await axios.get(url).then((r: any) => r.data)
+}
 
 export default fetcher

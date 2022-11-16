@@ -1,1 +1,1 @@
-export { default as formatApi } from './formatApi';
+export { default as formatApi } from "./formatApi"

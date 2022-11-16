@@ -2,7 +2,7 @@ import { IProject } from "../types"
 
 export const initState: IProject[] = []
 
-export const url = 'https://api.github.com/users/IFAKA/repos'
+export const url = "https://api.github.com/users/IFAKA/repos"
 
 export const contacts = [
   { href: "https://github.com/IFAKA", name: "Github" },

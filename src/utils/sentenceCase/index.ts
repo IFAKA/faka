@@ -1,1 +1,1 @@
-export { default as sentenceCase } from './sentenceCase';
+export { default as sentenceCase } from "./sentenceCase"
