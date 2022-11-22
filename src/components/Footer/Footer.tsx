@@ -3,11 +3,11 @@ import { motion } from "framer-motion"
 
 const Footer = () => (
   <div className="sticky bottom-0 w-full border-t h-12 flex justify-center items-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 dark:border-t-slate-700">
-    <div className="flex justify-around w-80">
-      {contacts.map(({ href, name }, i) => (
+    <div className="flex items-center justify-around w-80">
+      {contacts.map(({ href, icon }, i) => (
         <motion.a
           key={i}
-          className="hover:underline"
+          className="hover:underline p-3 rounded-lg"
           href={href}
           target={"_blank"}
           rel="noreferrer"
@@ -21,7 +21,7 @@ const Footer = () => (
             delay: i * 0.1 + 0.5,
           }}
         >
-          {name}
+          {icon}
         </motion.a>
       ))}
     </div>
