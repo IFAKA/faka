@@ -2,26 +2,29 @@ import { contacts } from "@/models"
 import { motion } from "framer-motion"
 
 const Footer = () => (
-  <div className="fixed bottom-0 py-1.5 w-full flex justify-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 border-t dark:border-t-slate-700">
-    <motion.div
-      className="flex justify-around w-80 text-sm"
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1 }}
-    >
+  <div className="sticky bottom-0 w-full border-t h-12 flex justify-center items-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 dark:border-t-slate-700">
+    <div className="flex justify-around w-80">
       {contacts.map(({ href, name }, i) => (
-        <a
+        <motion.a
           key={i}
           className="hover:underline"
           href={href}
-          target={name === "cv" ? "_self" : "_blank"}
-          download={name === "cv"}
+          target={"_blank"}
           rel="noreferrer"
+          initial={{ opacity: 0, scale: 0.95, x: -20 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 25,
+            duration: 0.2,
+            delay: i * 0.1 + 0.5,
+          }}
         >
           {name}
-        </a>
+        </motion.a>
       ))}
-    </motion.div>
+    </div>
   </div>
 )
 
