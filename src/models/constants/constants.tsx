@@ -2,7 +2,6 @@ import {
   RiFileUserLine,
   RiGithubLine,
   RiLinkedinBoxLine,
-  RiLinkedinLine,
   RiMailLine,
 } from "react-icons/ri"
 import { IProject } from "../types"
