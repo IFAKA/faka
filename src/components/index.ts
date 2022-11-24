@@ -1,4 +1,5 @@
 export * from "./Body"
 export * from "./Footer"
+export * from "./Modal"
 export * from "./Navbar"
 export * from "./Spinner"
