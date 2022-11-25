@@ -25,18 +25,18 @@ const Body = () => {
             key={id}
           >
             <motion.div
-              className="rounded-xl w-full h-full flex flex-col justify-between px-4 py-3 border cursor-pointer"
+              className="rounded-xl w-full h-full flex flex-col justify-between px-4 py-3 cursor-pointer border dark:border-none hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
               <div>
-                <div className="font-semibold">{name}</div>
-                <p>{desc}</p>
+                <h3 className="font-semibold">{name}</h3>
+                <p role="paragraph">{desc}</p>
               </div>
               <div className="flex border-t pt-2.5 flex-wrap text-sm mt-3">
                 {tags?.map((tag, i) => (
-                  <div className="pr-2" key={i}>
+                  <div className="pr-2" key={i} role="tag">
                     {tag}
                   </div>
                 ))}

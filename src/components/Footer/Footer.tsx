@@ -2,11 +2,11 @@ import { contacts } from "@/models"
 import { motion } from "framer-motion"
 
 const Footer = () => (
-  <div className="sticky bottom-0 w-full border-t h-12 flex justify-center items-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 dark:border-t-slate-700">
+  <div className="sticky bottom-0 w-full border-t dark:border-none h-12 flex justify-center items-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 dark:border-t-slate-700">
     <div className="flex items-center justify-around w-80 overflow-hidden h-full">
       {contacts.map(({ href, icon }, i) => (
         <motion.div
-          className="flex justify-center items-center hover:bg-slate-50 rounded-full"
+          className="flex justify-center items-center dark:hover:bg-slate-700 hover:bg-slate-50 rounded-full"
           key={i}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.98 }}
