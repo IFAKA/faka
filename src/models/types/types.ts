@@ -12,7 +12,6 @@ export interface IProject {
   tags: string[]
 }
 
-
 export interface Repo {
   id: number
   node_id: string
