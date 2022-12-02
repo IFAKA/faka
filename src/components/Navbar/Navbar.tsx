@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 const Navbar = () => (
-  <div className="sticky top-0 w-full border-b dark:border-none h-12 flex justify-center items-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 dark:border-t-slate-700">
+  <div className="sticky z-10 top-0 w-full border-b dark:border-none h-12 flex justify-center items-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 dark:border-t-slate-700">
     <motion.h1
       className="font-semibold text-xl"
       initial={{ opacity: 0, scale: 0.95 }}

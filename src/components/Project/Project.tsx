@@ -1,8 +1,8 @@
 import { IProject } from "@/models"
 import { motion } from "framer-motion"
 
-const Project = ({ project, i }: { project: IProject; i: number }) => {
-  const { id, href, name, desc, tags } = project
+const Project = ({ project }: { project: IProject }) => {
+  const { href, name, desc, tags } = project
   return (
     <motion.a
       className="rounded-xl h-full flex flex-col justify-between px-4 pt-3 pb-4 cursor-pointer border dark:border-none hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700"

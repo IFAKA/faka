@@ -2,7 +2,7 @@ import { CONTACTS } from "@/services"
 import { motion } from "framer-motion"
 
 const Footer = () => (
-  <div className="sticky bottom-0 w-full border-t dark:border-none h-12 flex justify-center items-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 dark:border-t-slate-700">
+  <div className="fixed bottom-0 w-full border-t dark:border-none h-12 flex justify-center items-center bg-white bg-opacity-70 backdrop-blur dark:bg-slate-800 dark:border-t-slate-700">
     <div className="flex items-center justify-around w-80 overflow-hidden h-full">
       {CONTACTS.map(({ href, icon }, i) => (
         <motion.div
