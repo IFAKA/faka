@@ -1,23 +1,23 @@
-import { initState, url } from "@/models"
-import { fetcher } from "@/services"
+import { initState } from "@/models"
+import { fetcher, URL } from "@/services"
 import { filterRepos, formatApi } from "@/utils"
 import { useEffect, useState } from "react"
+import useSWR from "swr"
 
 const useProject = () => {
   const [projects, setProjects] = useState(initState)
-
-  const getProjects = async () => {
-    const apiRes = await fetcher(url)
-    const rawRepos = formatApi(apiRes)
-    const repos = filterRepos(rawRepos)
-    setProjects(repos)
-  }
+  const { data, error } = useSWR(URL, fetcher)
+  const isLoaded = !!data
 
   useEffect(() => {
-    getProjects()
-  }, [])
+    if (data) {
+      const rawRepos = formatApi(data)
+      const repos = filterRepos(rawRepos)
+      setProjects(repos)
+    }
+  }, [data])
 
-  return projects
+  return { projects, isLoaded, error }
 }
 
 export default useProject
