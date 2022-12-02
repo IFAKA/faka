@@ -26,7 +26,7 @@ const Project = ({ project, i }: { project: IProject; i: number }) => {
       </p>
       <div className="flex border-t pt-1.5 flex-wrap text-sm">
         {tags?.map((tag, i) => (
-          <div className="pr-2 mt-2" key={i} role="tag">
+          <div className="pr-2 mt-2" key={i} role="listitem">
             {tag}
           </div>
         ))}
