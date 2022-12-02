@@ -20,7 +20,7 @@ const Project = ({ project, i }: { project: IProject; i: number }) => {
         damping: 20,
       }}
     >
-      <h3 className="font-semibold text-lg mb-2">{name}</h3>
+      <h1 className="font-semibold text-lg mb-2">{name}</h1>
       <p role="paragraph" className="mb-5">
         {desc}
       </p>
