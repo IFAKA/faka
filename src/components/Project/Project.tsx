@@ -24,13 +24,13 @@ const Project = ({ project, i }: { project: IProject; i: number }) => {
       <p role="paragraph" className="mb-5">
         {desc}
       </p>
-      <div className="flex border-t pt-1.5 flex-wrap text-sm">
+      <ul className="flex border-t pt-1.5 flex-wrap text-sm">
         {tags?.map((tag, i) => (
-          <div className="pr-2 mt-2" key={i} role="listitem">
+          <li className="pr-2 mt-2" key={i}>
             {tag}
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </motion.a>
   )
 }
